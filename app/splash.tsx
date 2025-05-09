@@ -1,15 +1,15 @@
 import { useRouter } from "expo-router";
 import { useEffect } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import logo from "../../assets/images/SplashScreen/logo.png";
-import FadeInWrapper from "../../components/common/FadeInWrapper/FadeInWrapper";
+import logo from "../assets/images/SplashScreen/logo.png";
+import FadeInWrapper from "../components/common/FadeInWrapper/FadeInWrapper";
 
 export default function SplashScreen() {
   const router = useRouter();
 
   useEffect(() => {
     const time = setTimeout(() => {
-      router.replace("/onboarding");
+      router.replace("/onboarding/");
     }, 3000);
     return () => clearTimeout(time);
   });

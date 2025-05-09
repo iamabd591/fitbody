@@ -19,16 +19,16 @@ export default function OnboardingScreen() {
   return (
     <FadeInWrapper>
       <ImageBackground
-        imageStyle={{ resizeMode: "cover" }}
         style={styles.background}
         source={image}
+        resizeMode="cover"
       >
         <View style={styles.overlay}>
           <View style={styles.content}>
             <Text style={styles.title}>Welcome to</Text>
             <Image source={logo} style={styles.logo} resizeMode="center" />
             <Text style={styles.heading}>
-              <span style={styles.spanStyle}>FIT</span>Body
+              <Text style={styles.spanStyle}>FIT</Text>Body
             </Text>
             <BlurView intensity={50} tint="prominent" style={styles.blurWrapper}>
               <View style={styles.blurContent}>

@@ -7,7 +7,7 @@ export default function Index() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      router.replace('/splash/splash');
+      router.replace('/splash');
     }, 300); 
     return () => clearTimeout(timeout);
   }, []);
