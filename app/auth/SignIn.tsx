@@ -29,7 +29,7 @@ export default function SignIn() {
     validationSchema,
     onSubmit: (values) => {
       console.log(values);
-      router.navigate("/");
+      router.navigate("/Preferences/Index");
     },
   });
 
@@ -149,8 +149,10 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#fff",
     borderRadius: 10,
+    width: "100%",
     padding: 10,
     height: 50,
+
   },
   error: {
     color: "red",
@@ -177,6 +179,8 @@ const styles = StyleSheet.create({
   },
   passwordInput: {
     paddingRight: 10,
+    height:"100%",
+    width: "100%",
     flex: 1,
   },
 });

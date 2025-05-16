@@ -29,7 +29,7 @@ export default function SetPassword() {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.navigate("/auth/VerifyOTP");
+      router.navigate("/Preferences/Index");
     },
   });
   return (
@@ -133,8 +133,11 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#fff",
     borderRadius: 10,
+    outline: "none",
+    width: "100%",
     padding: 10,
     height: 50,
+
   },
   error: {
     color: "red",
@@ -149,6 +152,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     height: 50,
+
   },
   passwordInput: {
     paddingRight: 10,

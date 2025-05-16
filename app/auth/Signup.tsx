@@ -215,8 +215,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     outlineColor: "none",
     borderRadius: 10,
+    width: "100%",
     padding: 10,
     height: 50,
+
   },
   error: {
     color: "red",
@@ -257,6 +259,8 @@ const styles = StyleSheet.create({
   },
   passwordInput: {
     paddingRight: 10,
+    width: "100%",
+    height:"100%",
     flex: 1,
   },
 });
