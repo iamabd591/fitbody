@@ -1,4 +1,3 @@
-import { BlurView } from 'expo-blur';
 import { useRouter } from "expo-router";
 import {
   Image,
@@ -30,7 +29,7 @@ export default function OnboardingScreen() {
             <Text style={styles.heading}>
               <Text style={styles.spanStyle}>FIT</Text>Body
             </Text>
-            <BlurView intensity={50} tint="prominent" style={styles.blurWrapper}>
+            <View style={styles.blurWrapper}>
               <View style={styles.blurContent}>
 
                 <TouchableOpacity
@@ -45,7 +44,7 @@ export default function OnboardingScreen() {
                   <Text style={styles.buttonText}>{"Next"}</Text>
                 </TouchableOpacity>
               </View>
-            </BlurView>
+            </View>
           </View>
         </View>
       </ImageBackground>

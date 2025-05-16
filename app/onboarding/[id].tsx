@@ -28,20 +28,24 @@ export default function OnboardingStep() {
 
     if (stepIndex >= 0 && stepIndex < onboardingData.length) {
       const data = onboardingData[stepIndex];
-    
+
       setStepData({
         ...data,
         image: images[stepIndex],
         icon: icons[stepIndex],
-        buttonLabel: stepIndex < onboardingData.length - 1 ? "Next" : "Get Started",
-        nextRoute: stepIndex < onboardingData.length - 1 ? `/onboarding/${stepIndex + 2}` : "/",
+        buttonLabel:
+          stepIndex < onboardingData.length - 1 ? "Next" : "Get Started",
+        nextRoute:
+          stepIndex < onboardingData.length - 1
+            ? `/onboarding/${stepIndex + 2}`
+            : "/auth/SignIn",
         id: stepIndex + 2,
       });
     }
-    
-  }, [id]);
+  }, [id, router]);
 
   if (!stepData) return null;
 
   return <OnboardingScreen {...stepData} />;
+
 }

@@ -1,4 +1,4 @@
-import { BlurView } from "expo-blur";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { useRouter } from "expo-router";
 import FadeInWrapper from "../../components/common/FadeInWrapper/FadeInWrapper";
 
@@ -8,19 +8,22 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 
 type OnboardingScreenProps = {
   description: string;
   buttonLabel: string;
+  nextRoute: string;
   id: number;
   image: any;
   icon: any;
 };
+
 export default function OnboardingScreen({
   buttonLabel,
   description,
+  nextRoute,
   image,
   icon,
   id,
@@ -36,21 +39,26 @@ export default function OnboardingScreen({
         <View style={styles.overlay}>
           <TouchableOpacity
             style={styles.skipButton}
-            onPress={() => router.replace("/main/Home")}
+            onPress={() => router.replace("/auth/SignIn")}
           >
-            <Text style={styles.skipText}>Skip <Text style={styles.skipArrow}>&#8594;</Text></Text>
+            <Text style={styles.skipText}>
+              Skip{" "}
+              <Text style={styles.skipArrow}>
+                <AntDesign name="caretright" size={12} />
+              </Text>
+            </Text>
           </TouchableOpacity>
           <View style={styles.content}>
             <Image source={icon} resizeMode="contain" style={styles.icon} />
             <Text style={styles.description}>{description}</Text>
           </View>
-          <BlurView intensity={70} tint="prominent" style={styles.blurWrapper}>
+          <View style={styles.blurWrapper}>
             <View style={styles.blurContent}>
               <TouchableOpacity
                 style={styles.button}
                 onPress={() =>
                   router.push({
-                    pathname: "/onboarding/[id]",
+                    pathname: nextRoute || `/onboarding/${id}`,
                     params: { id: id },
                   })
                 }
@@ -58,10 +66,9 @@ export default function OnboardingScreen({
                 <Text style={styles.buttonText}>{buttonLabel}</Text>
               </TouchableOpacity>
             </View>
-          </BlurView>
+          </View>
         </View>
       </ImageBackground>
-
     </FadeInWrapper>
   );
 }
@@ -81,7 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    backgroundColor: "#B3A0FF",
+    backgroundColor: "#896CFE",
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center",
@@ -120,31 +127,31 @@ const styles = StyleSheet.create({
   blurWrapper: {
     borderRadius: 30,
     marginTop: 10,
-    width: '50%',
+    width: "50%",
   },
   blurContent: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   skipButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 40,
     right: 20,
     zIndex: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: 10,
     paddingVertical: 4,
   },
   skipText: {
-    color: '#E2F163',
-    fontWeight: '700',
+    color: "#E2F163",
+    fontWeight: "700",
     fontSize: 18,
   },
   skipArrow: {
     fontSize: 18,
-    color: '#E2F163',
-    fontWeight: '700',
+    color: "#E2F163",
+    fontWeight: "700",
   },
 });
