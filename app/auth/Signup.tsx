@@ -255,10 +255,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 10,
+    width:"100%",
     height: 50,
   },
   passwordInput: {
-    paddingRight: 10,
     width: "100%",
     height:"100%",
     flex: 1,
